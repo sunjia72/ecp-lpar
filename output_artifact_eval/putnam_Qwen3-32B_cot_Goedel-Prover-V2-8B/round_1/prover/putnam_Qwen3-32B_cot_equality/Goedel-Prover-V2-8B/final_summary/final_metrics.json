@@ -1,0 +1,58 @@
+{
+  "seed": 0,
+  "field": "complete",
+  "max_round": 2,
+  "num_origins": 156,
+  "pass@1_with_correction": 0.03205128205128205,
+  "pass@1_with_correction_num_solved_instances": 5,
+  "pass@k_with_correction": 0.0641025641025641,
+  "pass@k_with_correction_num_solved_instances": 10,
+  "per_round": {
+    "round_0": {
+      "pass@k": 0.02564102564102564,
+      "pass@k_num_solved_instances": 4,
+      "pass@1": 0.019230769230769232,
+      "pass@1_num_solved_instances": 3
+    },
+    "round_1": {
+      "pass@k": 0.04487179487179487,
+      "pass@k_num_solved_instances": 7,
+      "pass@1": 0.02564102564102564,
+      "pass@1_num_solved_instances": 4
+    },
+    "round_2": {
+      "pass@k": 0.0641025641025641,
+      "pass@k_num_solved_instances": 10,
+      "pass@1": 0.03205128205128205,
+      "pass@1_num_solved_instances": 5
+    }
+  },
+  "final_round_sampled_pass_curve": {
+    "max_k_over_origins": 4,
+    "pass_curve": {
+      "1": {
+        "accuracy": 0.00641025641025641,
+        "num_solved_instances": 1
+      },
+      "2": {
+        "accuracy": 0.02564102564102564,
+        "num_solved_instances": 4
+      },
+      "3": {
+        "accuracy": 0.05128205128205128,
+        "num_solved_instances": 8
+      },
+      "4": {
+        "accuracy": 0.0641025641025641,
+        "num_solved_instances": 10
+      }
+    },
+    "definition": "For each t, for each origin we sample t distinct genids (without replacement) using a deterministic RNG seeded by (seed, t). Success if any sampled genid is correct by max_round. If an origin has < t genids, we sample all of them (so it matches pass@k for that origin)."
+  },
+  "notes": {
+    "filtering": "All metrics and final_summary are computed ONLY over origins where dataset entry has is_formalized == 'True'. Missing is_formalized defaults to 'False'.",
+    "pass@k_at_round_r": "Cumulative through round r: for each origin, success if ANY of its k genids is correct by round r.",
+    "pass@1_at_round_r": "Simulated pass@1 with fixed seed: for each origin, sample 1 genid once (at start) and success if that sampled genid is correct by round r.",
+    "key_fix": "Correction-round compilation IDs are remapped to canonical generation_id using full_records_corr{r}.json id_maps when available."
+  }
+}

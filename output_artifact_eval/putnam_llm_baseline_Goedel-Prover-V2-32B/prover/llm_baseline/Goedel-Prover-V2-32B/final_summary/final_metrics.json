@@ -1,0 +1,128 @@
+{
+  "seed": 0,
+  "field": "complete",
+  "max_round": 2,
+  "num_origins": 346,
+  "automation_solved_num_instances": 0,
+  "pass@1_with_correction": 0.008670520231213872,
+  "pass@1_with_correction_num_solved_instances": 3,
+  "pass@k_with_correction": 0.02023121387283237,
+  "pass@k_with_correction_num_solved_instances": 7,
+  "per_round": {
+    "round_0": {
+      "pass@k": 0.02023121387283237,
+      "pass@k_num_solved_instances": 7,
+      "pass@1": 0.008670520231213872,
+      "pass@1_num_solved_instances": 3
+    },
+    "round_1": {
+      "pass@k": 0.02023121387283237,
+      "pass@k_num_solved_instances": 7,
+      "pass@1": 0.008670520231213872,
+      "pass@1_num_solved_instances": 3
+    },
+    "round_2": {
+      "pass@k": 0.02023121387283237,
+      "pass@k_num_solved_instances": 7,
+      "pass@1": 0.008670520231213872,
+      "pass@1_num_solved_instances": 3
+    }
+  },
+  "final_round_sampled_pass_curve": {
+    "max_k_over_origins": 32,
+    "pass_curve": {
+      "1": {
+        "accuracy": 0.011560693641618497,
+        "num_solved_instances": 4
+      },
+      "2": {
+        "accuracy": 0.014450867052023121,
+        "num_solved_instances": 5
+      },
+      "4": {
+        "accuracy": 0.017341040462427744,
+        "num_solved_instances": 6
+      },
+      "8": {
+        "accuracy": 0.014450867052023121,
+        "num_solved_instances": 5
+      },
+      "16": {
+        "accuracy": 0.014450867052023121,
+        "num_solved_instances": 5
+      },
+      "32": {
+        "accuracy": 0.02023121387283237,
+        "num_solved_instances": 7
+      }
+    },
+    "definition": "For each displayed t, for each origin we sample t distinct genids (without replacement) using a deterministic RNG seeded by (seed, t). Success if any sampled genid is correct by max_round. Only powers of two up to max_k are displayed. If an origin has < t genids, we sample all of them (so it matches pass@k for that origin)."
+  },
+  "category_metrics": {
+    "putnam": {
+      "num_origins": 346,
+      "automation_solved_num_instances": 0,
+      "pass@1_with_correction": 0.008670520231213872,
+      "pass@1_with_correction_num_solved_instances": 3,
+      "pass@k_with_correction": 0.02023121387283237,
+      "pass@k_with_correction_num_solved_instances": 7,
+      "per_round": {
+        "round_0": {
+          "pass@k": 0.02023121387283237,
+          "pass@k_num_solved_instances": 7,
+          "pass@1": 0.008670520231213872,
+          "pass@1_num_solved_instances": 3
+        },
+        "round_1": {
+          "pass@k": 0.02023121387283237,
+          "pass@k_num_solved_instances": 7,
+          "pass@1": 0.008670520231213872,
+          "pass@1_num_solved_instances": 3
+        },
+        "round_2": {
+          "pass@k": 0.02023121387283237,
+          "pass@k_num_solved_instances": 7,
+          "pass@1": 0.008670520231213872,
+          "pass@1_num_solved_instances": 3
+        }
+      },
+      "final_round_sampled_pass_curve": {
+        "max_k_over_origins": 32,
+        "pass_curve": {
+          "1": {
+            "accuracy": 0.011560693641618497,
+            "num_solved_instances": 4
+          },
+          "2": {
+            "accuracy": 0.014450867052023121,
+            "num_solved_instances": 5
+          },
+          "4": {
+            "accuracy": 0.017341040462427744,
+            "num_solved_instances": 6
+          },
+          "8": {
+            "accuracy": 0.014450867052023121,
+            "num_solved_instances": 5
+          },
+          "16": {
+            "accuracy": 0.014450867052023121,
+            "num_solved_instances": 5
+          },
+          "32": {
+            "accuracy": 0.02023121387283237,
+            "num_solved_instances": 7
+          }
+        }
+      }
+    }
+  },
+  "notes": {
+    "filtering": "Benchmark metrics count only origins where the dataset entry has is_formalized == 'True'. For custom/demo inputs with no origins present in the bundled datasets, all observed origins are counted.",
+    "denominator": "For final_proof_* directories, origins from the matched source dataset are included even when answer construction/refutation prevented final prover generation; these origins count as unsolved.",
+    "pass@k_at_round_r": "Cumulative through round r: for each origin, success if ANY of its k genids is correct by round r.",
+    "pass@1_at_round_r": "Simulated pass@1 with fixed seed: for each origin, sample 1 genid once (at start) and success if that sampled genid is correct by round r.",
+    "key_fix": "Correction-round compilation IDs are remapped to canonical generation_id using full_records_corr{r}.json id_maps when available.",
+    "automation_solved_num_instances": "Unique scored origins with at least one correct compilation row marked automation_fallback_preseeded. These are automation fallback solutions preseeded into prover artifacts before LLM proof generation."
+  }
+}
