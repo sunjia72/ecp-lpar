@@ -131,7 +131,7 @@ TUPLE_ADMISSIBLE_VOCABULARY: Set[str] = _tokens("""
 
 PROP_ONLY_ADMISSIBLE_VOCABULARY = "[``False, ``True]"
 
-# 29 problems require manual inspection (4 overlapped ones)
+# Problems that require manual inspection (including overlapped problems)
 OTHERS_PROBLEM_NAMES: Set[str] = _tokens("putnam_1962_a2 putnam_1974_b1 putnam_1996_a2 putnam_1996_a6 putnam_2018_b1")
 SUM_PRODUCT_PROBLEM_NAMES: Set[str] = _tokens("putnam_1975_a4 putnam_1986_a6 putnam_1989_b3")
 STRUCTURAL_QUANTIFIER_PROBLEM_NAMES: Set[str] = _tokens("""
